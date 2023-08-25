@@ -1,9 +1,11 @@
 {
-  "name": "mailer-test",
+  "name": "nodejs-mailer-samples",
   "version": "1.0.0",
-  "description": "Different mailers and packages to send emails",
+  "description": "Different mail clients samples and packages to send emails from a Node.js backend",
   "main": "index.js",
   "scripts": {
+    "start": "node -r dotenv/config . dotenv_config_path=./.env",
+    "dev": "nodemon -r dotenv/config . dotenv_config_path=./.env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,5 +18,15 @@
     "emails"
   ],
   "author": "Bhushan Kalvani",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "email-templates": "^11.1.1",
+    "express": "^4.18.2",
+    "mailtrap": "^3.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
