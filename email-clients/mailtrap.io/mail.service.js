@@ -5,8 +5,6 @@
  */
 const { MailtrapClient } = require('mailtrap');
 const EmailTemplate = require('email-templates');
-const fs = require('fs');
-const path = require('path');
 
 // For this example to work, you need to set up a sending domain,
 // and obtain a token that is authorized to send from the domain
@@ -37,7 +35,7 @@ const sendWithMailtrapSDK = async (
 
     return client.send({
         to: recipients,
-        from: { name: 'Mailtrap Sender', email: process.env.SENDER_EMAIL },
+        from: { name: process.env.SENDER_NAME, email: process.env.SENDER_EMAIL },
         category,
         custom_variables,
         subject,
